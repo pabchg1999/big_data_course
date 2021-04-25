@@ -1,0 +1,280 @@
+[
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "numFaculty",
+          "expression": "isBlank(value)",
+          "columnName": "numFaculty",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": true,
+                "l": "true"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "endowment",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "U.S. $19.2 million",
+          "US$ $19.2 million"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "U.S. $19.2 million"
+      }
+    ],
+    "description": "Mass edit cells in column endowment"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "numFaculty",
+          "expression": "isBlank(value)",
+          "columnName": "numFaculty",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": true,
+                "l": "true"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "university",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "Baldwin%E2%80%93Wallace College"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Baldwin Wallace College"
+      }
+    ],
+    "description": "Mass edit cells in column university"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "numFaculty",
+          "expression": "isBlank(value)",
+          "columnName": "numFaculty",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": true,
+                "l": "true"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "numPostgrad",
+    "expression": "grel:value+ \" postgraduates\"",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column numPostgrad using expression grel:value+ \" postgraduates\""
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "numFaculty",
+          "expression": "isBlank(value)",
+          "columnName": "numFaculty",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": true,
+                "l": "true"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "endowment",
+    "expression": "grel:value.replace(\"N/A\", \"\")",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column endowment using expression grel:value.replace(\"N/A\", \"\")"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "numFaculty",
+          "expression": "isBlank(value)",
+          "columnName": "numFaculty",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": true,
+                "l": "true"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "established",
+    "expression": "grel:value.toDate().toString('yyyy-MM-dd')",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column established using expression grel:value.toDate().toString('yyyy-MM-dd')"
+  },
+  {
+    "op": "core/column-addition",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "numFaculty",
+          "expression": "isBlank(value)",
+          "columnName": "numFaculty",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": true,
+                "l": "true"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "baseColumnName": "established",
+    "expression": "grel:value.length()",
+    "onError": "set-to-blank",
+    "newColumnName": "verify",
+    "columnInsertIndex": 7,
+    "description": "Create column verify at index 7 based on column established using expression grel:value.length()"
+  },
+  {
+    "op": "core/multivalued-cell-split",
+    "columnName": "endowment",
+    "keyColumnName": "university",
+    "mode": "separator",
+    "separator": ",",
+    "regex": false,
+    "description": "Split multi-valued cells in column endowment"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "numStaff",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "?",
+          "~"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "?"
+      },
+      {
+        "from": [
+          "500",
+          "~500"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "500"
+      },
+      {
+        "from": [
+          "NA",
+          "N/A"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "N/A"
+      }
+    ],
+    "description": "Mass edit cells in column numStaff"
+  },
+  {
+    "op": "core/column-reorder",
+    "columnNames": [
+      "university",
+      "endowment",
+      "numFaculty",
+      "numStudents",
+      "numPostgrad",
+      "numUndergrad",
+      "numDoctoral",
+      "country",
+      "numStaff",
+      "established",
+      "verify"
+    ],
+    "description": "Reorder columns"
+  }
+]
