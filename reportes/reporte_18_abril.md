@@ -24,6 +24,20 @@
         * Twitter data sets
         * Data sets gubernamentales
         * Data sets académicos
+    * Procesamiento y limpieza de datos
+        * Tipos de ruido en el *dataset*
+            * Artefactos, ruido corregible.
+            * Errores, informacion dañada.
+        * *Data compatibility*, aqui se refire a unificar los datos, para tener un *dataset* mas comprensible, como usar la misma metrica para una medicion dada. Tambien estandarizar la representacion numerica, segun el caso.
+        * Datos faltantes, en un dataset muchas veces los datos no estan, razon por la que existen varias tecnicas para solucionar este problema:
+            *  Eliminar la informacion, esto en caso que hayan muchos datos faltantes.
+            * Estimar el valor faltante, en caso que se quiere usar la informacion. Se pueden usar tecnicas como
+                * Heursticas
+                * Valor medio
+                * Vecino mas cercano
+                * Regresion lineal
+            * Deteccion de un *outlier*, esto se refiere a datos atipicos que muy comunmente son un error en la entrada de datos. Se pueden identificar usando ciertas distribuciones en las que se pueden aislar los *outliers*.
+
 * ## Comentarios
     Me parece que el estudio de este tema tiene mucha relevancia, sobretodo en un mundo donde la información recolectada se sigue acumulando, día a día. Esperando a que se analicen y apliquen modelos, para poder comprender mejor los datos. Con esta información no solamente podemos saber más de algún tema, podemos optimizar dicho sistema, saber qué relación existe entre factores, poder vender mejor algún producto, y la lista sigue y sigue.
 
@@ -32,5 +46,5 @@
 * ## Posible uso
     Tanto en el ambiente laboral, como en la investigación, analizar datos es un tema de gran importancia en nuestro mundo actual. Mucha de la información actual está resguardada en *data sets* gigantescos y reducir la dicha información en algo útil y conciso es de suma importancia.  
 * ## Material extra
-    La pagina web [Kaggle](https://www.kaggle.com/datasets?datasetsOnly=true) posee multiples *data sets*, en los que se puede aplicar *data mining*.
+    La pagina web [Kaggle](https://www.kaggle.com/datasets?datasetsOnly=true) posee multiples *data sets*, en los que se puede aplicar *data mining*.   
 
