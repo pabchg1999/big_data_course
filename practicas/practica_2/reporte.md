@@ -1,6 +1,0 @@
-# Pequeño reporte
-# Autor:  Pablo Cheng Galdamez 
-# Carne: B72182
-Una vez terminados ambos laboratorios, y haber revisado todas las funcionalidades de `Open Refine`,  me di cuenta de la utilidad y  practicidad que tiene la herramienta. De igual manera me parecio muy util las predicciones que hace al tratar de sugerir los *merges*, y me parecieron bastantes certeros. Tambien las estadisticas de las *facets* me parecieron muy interesantes, y practicas para un vistazo rapido de los datos en el dataset.   
-
-Luego de usar la herramienta `Open Refine`y ver su utilidad me sorprendio como muchas veces los data sets tienen muchas deficiencias. Tanto en su contenido como en sus *inputs*. A esto me refiero a como estos datos se nota que fueron introducidos manualmente, dejando que el usuario introdujera el formato que este quisiera. Lo que ocasiona que sean disparejos ciertos datos, razon por la que me parece de gran utilidad esta herramienta. Que muy posiblemente en un futuro sea menos importante con un mundo mas digitalizado, y mas propenso a que todo se riga en un solo formato. Y hayan menos errores de *input*.
